@@ -1,0 +1,1208 @@
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: new;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+@media (max-width:767px) {
+    header .container {
+        width: 100%;
+        position: absolute;
+        padding: 10px;
+    }
+
+    header .container ul {
+        flex-flow: column wrap;
+        align-items: flex-start;
+        background-color: var(--second-color);
+        color: white;
+        position: absolute;
+        top: 41px;
+        right: 5px;
+        border-radius: 5px;
+        grid-area: 1/4/1/9;
+        width: 100%;
+        transition: all 2s;
+        display: none;
+    }
+
+    header .container ul::after {
+        content: '';
+        border: 10px solid;
+        border-color: transparent transparent var(--second-color);
+        position: absolute;
+        top: -19px;
+        right: 1px;
+        display: none;
+    }
+
+    header .container ul li {
+        padding: 5px;
+        width: 100%;
+    }
+
+    header .container ul>li::after {
+        width: 0;
+        height: 0;
+    }
+
+    header .container ul li a {
+        color: white !important;
+        display: block;
+        padding: 5px;
+    }
+
+    header .container ul li a:hover {
+        padding-left: 15px;
+    }
+
+    header .container ul li:first-child::before {
+        content: '';
+        position: absolute;
+        bottom: -0;
+        left: 0;
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
+
+    header .container a img {
+        height: 26px;
+    }
+
+    header .fa-bars {
+        visibility: visible !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        grid-area: 1/6/1/11;
+        width: 100%;
+        text-align: center;
+    }
+
+    header i:hover+ul::after,
+    ul {
+        display: unset;
+    }
+
+    .container ul li:not(li:last-child):hover {
+        border-bottom: 1px white solid;
+        padding-left: 10px;
+    }
+
+    header i:hover+ul {
+        display: unset;
+
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+
+:root {
+    --main-color: #19a8fc;
+    --second-color: #19a8fc7a
+}
+
+@font-face {
+    font-family: new;
+    src: url(../Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+}
+
+/* end global rules */
+/* start component  */
+.comp {
+    margin: 0 auto 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.comp h2 {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    width: fit-content;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+
+.comp h2::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 2;
+    background-color: var(--main-color);
+}
+
+.comp h2::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+}
+
+.comp p {
+    line-height: 2;
+}
+
+/* end  component  */
+/* start header rule */
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    color: white;
+    margin: 0 auto;
+    column-gap: 20px;
+    height: 70px;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.fa-bars {
+    visibility: hidden;
+}
+
+.container a {
+    grid-area: 1/1/1/3;
+}
+
+.container .logo {
+    grid-area: 1/1/1/3;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.container .logo i {
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.container a img {
+
+    max-height: 52px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+}
+
+.container ul {
+    grid-area: 1/5/1/11;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container ul li:hover a {
+    color: var(--main-color);
+}
+
+.container ul li {
+    position: relative;
+}
+
+.container ul li:first-child a {
+    color: var(--main-color);
+
+
+}
+
+header .container ul li:first-child::before {
+    content: '';
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 2px;
+}
+
+.container ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.container ul>li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+    display: none;
+}
+
+.container ul li:hover::after {
+    display: block;
+}
+
+.container .icon {
+    grid-area: 1/11/1/13;
+    position: relative;
+}
+
+.container .icon i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translatey(-50%);
+}
+
+.container .icon i::after {
+    content: '';
+    width: 2px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -150%;
+    transform: translatey(-50%);
+}
+
+/* end header rule */
+/* start rule landing */
+section .landing {
+    background-image: url(../images/owl-2227574.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+section .over-laye {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 20%);
+}
+
+section .container {
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+section .landing .box {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    background-color: #19a8fc7a;
+    padding: 50px 10px;
+    transform: translateY(-50%);
+}
+
+section .landing .box::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    background-color: #19a8fc7a;
+    height: 100%;
+}
+
+section .landing .box p {
+    width: 400px;
+}
+
+section .bools {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90px;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+}
+
+.landing .container span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+
+}
+
+section .bools span:nth-child(2) {
+    background-color: var(--main-color);
+}
+
+section .r {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+section .l {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+/* start media for landing  */
+@media (max-width:767px) {
+    section .container .box p {
+        width: auto;
+    }
+
+    section .landing {
+        background-image: url(../images/owl-1-2227574.jpg);
+
+    }
+}
+
+section .services {
+    background-image: url(../images/reindeer-5823283.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+section .bott {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px 60px;
+    justify-content: center;
+    padding: 15px;
+}
+
+section .bott>div {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section .bott>div .right h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section .bott>div i {
+    font-size: 40px;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+section .bott>div .right {
+    flex-basis: 75%;
+    background-color: var(--second-color);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width :767px) {
+    section .services {
+        background-image: url(../images/reindeer-1-5823283.jpg);
+    }
+
+    section .bott {
+        grid-template-columns: 100%;
+        grid-row-gap: 70px;
+    }
+
+    section .bott>div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section .bott>div i {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+section .our-des {
+    grid-template-rows: 240px;
+    display: grid;
+    padding: 190px 0 20px 20px;
+    grid-template-columns: repeat(10, 1fr);
+    background-image: url(../images/the-fog-4909513.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+section .our-des .image {
+    grid-area: 1/2/1/5;
+}
+
+section .our-des .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    opacity: 0.5;
+
+}
+
+section .our-des .box {
+    flex-basis: 40%;
+    background-color: #2d426354;
+    padding: 15px;
+    border-radius: 10px 0 0 10px;
+    color: white;
+    grid-area: 1/6/1/12;
+}
+
+
+
+section .our-des .box h2 {
+    margin: 10px 0 20px 20px;
+}
+
+section .our-des .box>div {
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+section .our-des .box>div i {
+    margin: 0 20px 0;
+
+}
+
+@media (max-width:767px) {
+    section .our-des {
+        padding: 10px;
+        background-color: var(--main-color);
+        background-image: url(../images/the-fog-1-4909513.jpg);
+        display: flex;
+        flex-flow: wrap column;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+
+    section .our-des .box {
+
+        grid-area: initial;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+
+    section .our-des .image {
+        grid-area: initial;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+}
+
+section .portfolio .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .portfolio .container .images {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 180px));
+    margin-top: 30px;
+    gap: 10px;
+    grid-template-rows: repeat(2, 190px);
+    background-color: #326a8a7a;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    section .portfolio .container .images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+section .portfolio .container img:hover {
+    opacity: 1 !important;
+    transform: translatey(-10px);
+}
+
+section .portfolio .container .images img {
+    width: 100%;
+    border-radius: 15px;
+    transition: all .5s;
+    opacity: .6;
+    height: 100%;
+}
+
+
+section .portfolio .container .headd {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section .portfolio .container .headd p {
+    width: fit-content;
+    margin: 0 10px;
+    ;
+    padding: 10px;
+}
+
+section .portfolio .container .headd p:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+section .portfolio .container .headd p.special {
+    background-color: var(--main-color);
+    color: white
+}
+
+section .portfolio .container .foot {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+section .portfolio .container .foot p {
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 5px;
+}
+
+section .super {
+    height: 50vh;
+    background-image: url(../images/chess-2730034.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000c9;
+}
+
+section .super .cont {
+    background-color: var(--second-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+section .super h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+section .super p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+section .super p:last-child {
+    padding: 20px;
+    background-color: #000000c9;
+    color: white;
+    border-radius: 10px;
+    margin: initial;
+}
+
+section .about .image {
+    margin-top: -18px;
+}
+
+section .about img {
+    width: 100%;
+    position: relative;
+    bottom: -65px;
+}
+
+section .stats {
+    padding: 40px 0;
+    background-image: url(../images/smoke-1732105_1920.jpg);
+    background-size: cover;
+}
+
+section .stats .container {
+    background-color: var(--second-color);
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px) {
+    section .stats .container {
+        flex-direction: column;
+    }
+
+    section .stats .container div {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width:768px) {
+    section .stats .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    section .stats .container div {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width:992px) {
+    section .stats .container>div {
+        flex-basis: 20%;
+    }
+}
+
+section .stats .container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+section .stats .container>div * {
+    margin-top: 5px;
+}
+
+section .stats .container>div h2 {
+    font-size: 40px;
+}
+
+section .stats .container>div>i {
+    color: black;
+    font-size: 20px;
+}
+
+section .ourr .container {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+@media (max-width:767px) {
+    section .ourr .container {
+        flex-direction: column;
+    }
+}
+
+section .container>div {
+    flex-basis: 48%;
+}
+
+section .container>div>.head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section .container>div>.head h2 {
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+section .container>div>.head p {
+    line-height: 1.6;
+}
+
+section .ourr .container .left .body img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+section .ourr .container .left ul {
+    display: flex;
+    width: 50px;
+    margin: auto;
+}
+
+section .ourr .container .left ul li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+section .ourr .container .left ul .active {
+    background-color: var(--main-color);
+}
+
+section .ourr .container .left .body>div {
+    margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+}
+
+@media (max-width : 767px) {
+    section .ourr .container .left .body>div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section .ourr .container .left .body>div img {
+        margin-bottom: 20px;
+    }
+}
+
+section .ourr .container .left .body>div img {
+    margin-right: 30px;
+}
+
+section .ourr .container .left .body>div .text {
+    color: #777;
+    border-bottom: 2px solid;
+    line-height: 2;
+}
+
+section .ourr .container .left .body>div .text p {
+    text-align: end;
+    margin: 10px 0;
+}
+
+section .ourr .container .right .body>div {
+    margin: 20px;
+}
+
+section .ourr .container .right .body>div .shape {
+    background-color: #ccc;
+    margin-top: 15px;
+    height: 20px;
+}
+
+section .ourr .container .right .body>div .shape span::after {
+    content: attr(data-attr);
+    height: 100%;
+    width: 30px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: calc(-100% - 13px);
+    right: -20px;
+    padding: 4px 8px;
+}
+
+section .ourr .container .right .body>div .shape span::before {
+    content: '';
+    position: absolute;
+    border: 10px solid;
+    border-color: black transparent transparent;
+    top: -9px;
+    right: -10px;
+}
+
+
+
+section .ourr .container .right .body>div .shape span {
+    background-color: var(--main-color);
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+
+section .pic .img img {
+    width: 100%;
+}
+
+.pic {
+    position: relative;
+}
+
+.pic .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section .container .parent {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    section .container .parent {
+        grid-template-columns: minmax(130px, 1fr);
+    }
+}
+
+@media (min-width: 767px) {
+    section .container .parent {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    section .container .parent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    section .container .parent {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+section .container .parent>div {
+    text-align: center;
+    background-color: #f1f0f0;
+    border-radius: 5px;
+}
+
+section .container .parent>div .head {
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    padding: 15px;
+}
+
+section .container .parent>div .head h2 {
+    font-size: 50px;
+    position: relative;
+}
+
+section .container .parent>div .head span {
+    color: #777;
+}
+
+section .container .parent>div .head h2::after {
+    content: '/MO';
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    right: -1%;
+
+}
+
+section .container .parent>div .head h2::before {
+    content: '$';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0%;
+    left: 10%;
+    font-size: 30px;
+}
+
+section .container .parent>div .body {
+    padding: 20px;
+}
+
+section .container .parent>div .body p:not(:last-child) {
+    padding: 10px;
+    border-bottom: 2px solid var(--main-color);
+    color: #777;
+}
+
+section .container .parent>div .body p:last-child {
+    color: #777;
+    padding: 10px;
+
+}
+
+section .container .parent>div .foot {
+    padding: 15px 0;
+    border-top: 2px solid var(--main-color);
+}
+
+section .container .parent>div .foot button {
+    padding: 5px 10px;
+    border-color: var(--main-color);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+section .container .con {
+    margin: 15px 0;
+}
+
+section .container .con p {
+    text-align: center;
+    padding: 15px;
+}
+
+section .container .con a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: var(--main-color);
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+section .subscribe {
+    background-image: url(../images/wooden-wall-1308152_1280.jpg);
+    background-size: cover;
+    padding: 50px 0;
+    margin: 20px 0;
+}
+
+section .subscribe .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 20px auto;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    section .subscribe .container {
+        flex-direction: column;
+    }
+
+    section .subscribe .container .text {
+        margin-bottom: 20px;
+    }
+}
+
+section .subscribe .text {
+    flex-basis: 35%;
+    color: white;
+    font-size: 20px;
+}
+
+section .subscribe .em {
+    flex-basis: 55%;
+
+}
+
+section .subscribe .em form {
+    display: flex;
+}
+
+section .subscribe .em form input[type="submit"] {
+    padding: 10px;
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid var(--main-color);
+}
+
+section .subscribe .em form input[type="email"] {
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid var(--main-color);
+    outline-color: transparent;
+    caret-color: var(--main-color);
+}
+
+section .subscribe .em form input[type="email"]::placeholder {
+    color: var(--main-color);
+}
+
+section .contact-us .container {
+    padding: 10px;
+}
+
+section .contact-us .body {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+@media (max-width:567px) {
+    section .contact-us .body {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 20px;
+
+    }
+
+    section .contact-us .body form {
+        padding: 15px;
+    }
+
+    section .contact-us .body .left {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    section .contact-us .body .left>div {
+        position: unset;
+    }
+}
+
+section .contact-us form {
+    grid-area: 1/1/1/9;
+    display: flex;
+    flex-direction: column;
+
+}
+
+section .contact-us .left {
+    grid-area: 1/9/1/13;
+    position: relative;
+}
+
+section .contact-us .left>div p {
+    color: #777;
+    margin-top: 32px;
+    font-size: 14px;
+}
+
+section .contact-us .left .top {
+    position: absolute;
+    top: 5px;
+}
+
+section .contact-us .left .bottom {
+    position: absolute;
+    bottom: 52%;
+}
+
+section .contact-us form input {
+    margin-top: 10px;
+    padding: 15px;
+}
+
+section .contact-us form input[type="submit"] {
+    width: fit-content;
+    background-color: var(--main-color);
+    color: white;
+    border-color: transparent;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+section .contact-us form ::placeholder {
+    font-weight: bold;
+    color: black;
+}
+
+section .contact-us form textarea {
+    margin-top: 10px;
+    padding: 15px;
+}
+
+footer {
+    background-image: url(../images/village-weaver-7229880.jpg);
+    background-size: cover;
+    padding: 50px 0 10px;
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .container h2 {
+    padding: 0 10px 10px;
+    border-bottom: 2px solid white;
+}
+
+footer .container p:last-child span {
+    color: var(--main-color);
+}
+
+footer .container>i:first-of-type {
+    color: var(--main-color);
+    font-size: 25px;
+}
+
+footer .container p:last-child {
+    margin-top: 65px;
+}
+
+footer .container * {
+    margin-top: 5px;
+
+}
+
+header .scroll {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 26px;
+    background-color: var(--second-color);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+header .scroll a {
+    text-decoration: none;
+    position: relative;
+}
+
+header .scroll a::after {
+    content: "";
+    border: 12px solid white;
+    border-color: transparent transparent white;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -80%);
+    left: 50%;
+}
